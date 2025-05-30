@@ -98,7 +98,7 @@ const storyData =
                 o2:"",
                 o3:""
             },
-            "walkDismissStand Your Ground" : {
+            walkDismissStandYourGround : {
                 text: `You want to run, but decide to stand your ground. Who knows how fast that thing can run? It creeps closer, its mouth drooling with white foam, when you hear the ear-splitting sound of a gunshot. The monster drops to the ground, dead. You have no idea who did that, but you know you're safe, for now.`,
                 o1:"",
                 o2:"",
@@ -117,19 +117,19 @@ const storyData =
                 o3:""
 
             },
-            "walkAskKeep Walking" : {
+            walkAskKeepWalking : {
                 text: `You decide to keep walking. A few hundred feet in the distance, you see a man with a shotgun. Do you ASK him for help, or do you KEEP WALKING?`,
                 o1 : "Ask",
                 o2 : "Keep Walking",
                 o3 : "",
             },
-                "walkAskKeep WalkingAsk" : {
+                walkAskKeepWalkingAsk : {
                     text: `You approach the man with the shotgun cautiously. He sees you and points his gun at you. “What are you doin’ around these parts”, he asks in a low, husky tone. “There’s one on them terrible monsters in these woods”, the man says. “I’ve been looking for those forsaken werewolves all my life, and now is my time. The name’s sam, buy the say. Shotgun Sam. He takes you in and then drives you to Mc. Donald's in the morning`,
                     o1:"",
                     o2:"",
                     o3:""
                 },
-                "walkAskKeep WalkingKeep Walking" : {
+                walkAskKeepWalkingKeepWalking : {
                     text: `“That man looks scary”, you say. “We better stay out of his way”. You go into the forest and the werewolf kills you.`,
                     o1:"",
                     o2:"",
