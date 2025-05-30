@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>THE HORROR GAME</title>
+</head>
+<body>
+    <h1>THE HORROR GAME</h1>
+    <p id="storyText"></p>
+    <h2 id="theEnd">THE END</h2>
+    <button onclick="start()" id="start">Start</button>
+    <form id="friendInput">
+        <input type="text" id="friend1input"></input>
+        <input type="text" id="friend2input"></input>
+        <input type="text" id="friend3input"></input>
+        <submit id="enter">
+            <button>Enter</button></submit>
+    </form>
+    <div id="optionButtons">
+        <button id="option1" onclick="chooseOption(1)"></button>
+        <button id="option2" onclick="chooseOption(2)"></button>
+        <button id="option3" onclick="chooseOption(3)"></button>
+    </div>
+    <script src="script.js"></script>
+    <script src = "story.js"></script>
+</body>
+</html>

@@ -90,8 +90,7 @@ You try to tell him to calm down, that nothing is coming. That’s when you feel
 THE END""")
          elif choice == "stand":
               print()
-              print("""You want to run, but decide to stand your ground. Who knows how fast that thing can run? It creeps closer, its mouth drooling with white foam, when you hear the ear-splitting sound of a gunshot. The monster drops to the ground, dead.
-You have no idea who did that, but you know you're safe, for now.
+              print("""
                     
 THE END""")
           
