@@ -7,12 +7,23 @@ let option1 = document.getElementById("option1");
 let option2 = document.getElementById("option2");
 let option3 = document.getElementById("option3");
 
+let optionsDisplay = window.getComputedStyle(document.getElementById("optionButtons")).display;
+let endDisplay = window.getComputedStyle(document.getElementById("theEnd")).display;
+let friendInputDisplay = window.getComputedStyle(document.getElementById("friendInput")).display;
+
 let storyContext = "";
+
+let gameState = "startPage"
 
 const options = {
     1 : option1,
     2 : option2,
     3 : option3
+};
+window.onload = function () {
+    document.getElementById("optionButtons").style.display = "none";
+    document.getElementById("theEnd").style.display = "none";
+    document.getElementById("friendInput").style.display = "none";
 }
 
 const friendInputs = [
@@ -27,8 +38,35 @@ for(let i=0; i<friendInputs.length; i++){
             event.preventDefault();
             friendInputs[i + 1].focus();
         }
-    })
+    });
 }
+
+let selectedOption = -1;
+let optionsList = []
+window.addEventListener("keydown", function(event){
+    if(event.key === "ArrowLeft" || event.key === "ArrowRight"){
+        
+        for(let i=1; i<=3; i++){
+            if(options[i].style.display !== "none"){
+                optionsList.push(options[i]);
+            }
+        }
+        if(event.key === "ArrowLeft"){
+            selectedOption = (selectedOption -1 + optionsList.length) % optionsList.length;
+        }
+        if(event.key === "ArrowRight"){
+            selectedOption = (selectedOption + 1) % optionsList.length
+        }
+        
+        optionsList[selectedOption].focus();
+    }
+    if(event.key === "Enter" && gameState === "startPage"){
+        event.preventDefault();
+        gameState = "friendInput"
+        start();
+    }
+});
+
 
 document.getElementById("friendInput").addEventListener('submit', function(e) {
     e.preventDefault();
@@ -39,8 +77,9 @@ function setText(text){
     storyText.innerText = text;
 }
 function start(){
+    gameState = "friendInput"
     storyText.innerText = "Please name 3 friends to bring along with you:";
-    document.getElementById("friendInput").style.display = "initial";
+    document.getElementById("friendInput").style.display = friendInputDisplay;
     friendInputs[0].focus();
     document.getElementById("start").style.display = "none";
 }
@@ -52,6 +91,7 @@ function getFriendInput(){
     playGame();
 }
 function playGame(){
+    gameState = "story";
     storyContext = "";
     storyText.innerText = `It's been a long week of studying and finals, and you finally finished your last class. You and your friends want to go out and celebrate! Your friend has a cabin in the woods, and she's throwing a huge party, so you drive with your friends up the winding mountain road, exited to catch a break.  Suddenly, your car starts to sputter and die. You are stranded on the side of the road in the middle of the night. You try to call for help, only to realize you have no cell service. Luckily, you stopped in front of a house. 
       
@@ -64,10 +104,12 @@ function playGame(){
     ${friend3} suggests that you start walking to find a gas station or something.
     
     Do you WAIT, WALK to find help, or GO to the house?`
-    document.getElementById("optionButtons").style.display = "initial";
+    document.getElementById("optionButtons").style.display = optionsDisplay;
     option1.innerText = "Wait";
     option2.innerText = "Walk";
     option3.innerText = "Go";
+    selectedOption = 0;
+    option1.focus();
     
 }
 function chooseOption(number){
@@ -86,6 +128,8 @@ function chooseOption(number){
     }
     let currentOptions = [option1, option2, option3]
     let undefinedOptions = 0;
+    selectedOption = 0;
+    option1.focus();
 
     for(let i=0; i<currentOptions.length; i++){
         let optionTag = "o" + (i+1);
@@ -97,7 +141,7 @@ function chooseOption(number){
             currentOptions[i].innerText = storyData[storyContext][optionTag];
         }
         if(undefinedOptions >= 3){
-            document.getElementById("theEnd").style.display = "initial"
+            document.getElementById("theEnd").style.display = endDisplay;
         }
     }
 }

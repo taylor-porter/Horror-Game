@@ -1,9 +1,32 @@
-#optionButtons{
-    display: none;
+body{
+    margin-inline: 100px;
+}
+h1{
+    text-align: center;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#optionButtons {
+    margin-top:30px;
+}
+#optionButtons button{
+ margin-inline: 10px;
 }
 #theEnd {
-    display:none;
+    text-align: center;
 }
 #friendInput{
-    display: none;
+    display: grid;
+}
+#friendInput input{
+    margin-bottom: 20px;
+}
+
+#storyText{
+    margin-inline: auto;
+    text-align: center;
+
 }

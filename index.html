@@ -10,8 +10,10 @@
     <h1>THE HORROR GAME</h1>
     <p id="storyText"></p>
     <h2 id="theEnd">THE END</h2>
-    <button onclick="start()" id="start">Start</button>
-    <form id="friendInput">
+    <div class="center">
+        <button onclick="start()" id="start">Start</button>
+    </div>
+    <form id="friendInput" class="center">
             <label for="friend1">Friend 1</label>
         <input type="text" id="friend1input" name="friend1"></input>
             <label for="friend2">Friend 2</label>
@@ -20,7 +22,7 @@
         <input type="text" id="friend3input" name="friend3"></input>
         <button id="enter" type="submit">Enter</button>
     </form>
-    <div id="optionButtons">
+    <div id="optionButtons" class="center">
         <button id="option1" onclick="chooseOption(1)"></button>
         <button id="option2" onclick="chooseOption(2)"></button>
         <button id="option3" onclick="chooseOption(3)"></button>
