@@ -115,7 +115,7 @@ function playGame(){
 function chooseOption(number){
     let chosenOption = options[number].innerText;
     if(storyContext !== ""){
-        storyContext += chosenOption;
+        storyContext += chosenOption.replace(/\s+/g, "");
     }
     else{
         storyContext = chosenOption.toLowerCase();
