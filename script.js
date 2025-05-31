@@ -113,7 +113,7 @@ function playGame(){
         
     "let's just stay here", ${friend2} suggests. 
         
-    ${friend3} thinks they should start walking to find a gas station or something.
+    ${friend3} thinks you should start walking to find a gas station or something.
     
     Do you WAIT, WALK to find help, or GO to the house?`;
 
