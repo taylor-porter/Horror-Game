@@ -21,7 +21,7 @@ const storyData =
                 o3 : "",
             },
                 waitRideAskAttack : {
-                    text: `From the back seat, you choke the driver while your friend reaches over to get the steering wheel. Your friend punches the man in the face. You notice an axe underneath the seat. You grab hold of it and tell the man to get out. You go to the party like nothing happened.`,
+                    text: `From the back seat, you choke the driver while your friend reaches over to get the steering wheel. ${friend1} punches the man in the face. You notice an axe underneath the seat. You grab hold of it and tell the man to get out. You go to the party like nothing happened.`,
                     o1 : "",
                     o2 : "",
                     o3 : "",
@@ -39,13 +39,17 @@ const storyData =
                 o3 : "",
             },
                 waitRideJumpRun : {
-                    text: `You see a pair of golden arches in the distance. You realize it’s a miracle. “Run to that McDonald's!”, you tell your friends. You all run the fastest you have ever run in your life, but your friend cannot keep up. He collapses onto the ground, and you can hear a final, bloodcurdling screech come out of him as the man swings his ax. He was your life-long friend. There’s no time to think about that now, you just keep running through the field, until you reach the orange light radiating from the street lamps. You made it safely, but at what cost?`,
+                    text: () => `You see a pair of golden arches in the distance. You realize it’s a miracle. “Run to that McDonald's!”, says ${friend1}. You all run the fastest you have ever run in your life, but ${friend3} cannot keep up. They collapse on the ground, and you can hear a final, bloodcurdling screech come out of them as the man swings his axe. ${friend3} was your life-long friend. There’s no time to think about that now, you just keep running through the field, until you reach the orange light radiating from the street lamps. You made it safely, but at what cost?`,
                     o1 : "",
                     o2 : "",
                     o3 : "",
                 },
                 waitRideJumpAttack : {
-                    text: `You and your friends gang up on him, and are able to take his axe. One of your friends kills him. You go to McDonald's and then the party.`,
+                    text: () => `It's life or death, fight or flight, and you choose to fight. You and your friends circle around the man, unsure if this will work. ${friend3} grabs the man from behind in a chokehold, while ${friend1} pries the axe from the man's meaty fingers. With a blood-curdling warcry, ${friend1} thrusts the axe into the man's side. The man instantly collapses, and ${friend1} swings the axe into the man's head over and over in a beast-like rage. The man is dead. 
+                    
+                    "Let's never speak of this again", says ${friend2}.  
+                    
+                    You go to McDonald's and then go to the party (after washing up, of course).`,
                     o1 : "",
                     o2 : "",
                     o3 : "",
@@ -57,25 +61,51 @@ const storyData =
             o3 : "",
         },
             waitDeclineStay : {
-                text: "You decide to stay in the car. You lock the doors. The werewolf tumbles over the car, but the werewolf is shot. The bullet goes through the door and hits your friend in the head. Shotgun Sam comes out and apologizes.",
+                text: ()=> `You decide to stay in the car. You lock the doors. The werewolf stares at you through the car door, its eyes filled with rage and a thirst for blood. You hear its savage snarls as it leaps over the car and lands on the windshield. 
+                
+                BANG
+                
+                Your ears ring, and the growling stops. The werewolf is dead. You look to your right, and you see ${friend2}, dead. In their head, there is a hole and a bullet.
+                
+                The shillouette of a man holding a shotgun approaches the car, and you hear a slow, remorseful grumble-
+
+                "Oh my, what have I done?"`,
                 o1 : "",
                 o2 : "",
                 o3 : "",
             },
             waitDeclineCheck : {
-                text: "You go out. You see the werewolf. Do you RUN or HIDE?",
+                text: `You go out into the darkness. As you walk, you see two glowing eyes through the dense trees. Then, you hear an unearthly growl. In the moonlight, the outline of a beast reveals itself, standing on its hind legs. Do you RUN or HIDE?`,
                 o1 : "Run",
                 o2 : "Hide",
                 o3 : "",
             },
                 waitDeclineCheckRun : {
-                    text: "You run and meet Shotgun Sam who kills the werewolf.",
+                    text: ()=> `You run.
+                    
+                    You don't know what that thing is, but you know it's out fro your blood. You and your friends run as fast as they can up the road. You hear a bloodthirsty snarl coming towards you, coming ever closer. You look back, and see the eyes of a wolf, but this is no ordinary wolf. This is a monster.
+                    
+                    Your life starts to flash before your eyes.
+                    
+                    BANG
+
+                    The monster drops to the ground, dead. You see the shadow of a man with a shotgun coming closer.
+                    
+                    "What in tarnation are you doing?", he says in a slow grumble. 
+
+                    "What was that thing?!", ${friend2} screams. 
+
+                    "That there thing is one of them forsaken creatures known as werewolves. I've been searchin' for 'em all my life, and I finally have somethin' to show for it.
+                    
+                    You folks better be careful around these parts. Strange things are happenin'. By the way, the name's Sam. Shotgun Sam."
+                    
+                    Shotgun Sam takes you into his cabin, where you spend the night. He gets you gas, and sends you on your way. You're just glad you survived the night.`,
                     o1 : "",
                     o2 : "",
                     o3 : "",
                 },
                 waitDeclineCheckHide : {
-                    text: "You hide, but the werewolf finds you and kills you",
+                    text: "You dive into the woods and take cover under a bush. You try to slow your breathing, but your heart is pounding. You hear the growl, and the footsteps coming closer. You look up, and the two ravenous, bloodthirsty eyes are the last things you ever see.",
                     o1 : "",
                     o2 : "",
                     o3 : "",
@@ -105,13 +135,23 @@ const storyData =
                 o3:""
             },
         walkAsk : {
-            text: () => `\"What is 'It', you ask? \"It’s the darndest scariest thing I ever did see\", said the man. \"A beast that takes a resemblance to both a wolf and a man. Me and me buddies were darn chasin' it when it got ‘em.\" You're speechless. \"We need to look for supplies\", the man said. “We need som’in to kill that beast. “We could see if the people in the house could help us”, ${friend1} suggests. “I don’t think anyone’s home”, ${friend2} says. “I think we should keep walking and find something on the way”. Do you GO to the house, or KEEP WALKING?`,
+            text: () => `"What is 'It', you ask? 
+            
+            "It’s the darndest scariest thing I ever did see", said the man. "A beast that takes a resemblance to both a wolf and a man. Me and me buddies were darn chasin' it when it got ‘em." 
+            
+            You're speechless. 
+            
+            "We need to look for supplies", the man said. “We need som’in to kill that beast. 
+            
+            “We could see if the people in the house could help us”, ${friend1} suggests. 
+            
+            “I don’t think anyone’s home”, says ${friend2}. “I think we should keep walking and find something on the way”. Do you GO to the house, or KEEP WALKING?`,
             o1:"Go",
             o2:"Keep Walking",
             o3:""
         },
             walkAskGo : {
-                text: "You decide to go to the house and see if anyone can help you. When you get there, the house looks abandoned. You knock on the door, asking for help, but the door just creaks open. You walk in, when a guy with an ax jumps at you.",
+                text: "You decide to go to the house and see if anyone can help you. When you get there, the house looks abandoned. You knock on the door, asking for help, but the door just creaks open. You walk in, and a guy with an ax jumps at you.",
                 o1:"",
                 o2:"",
                 o3:""
@@ -124,13 +164,19 @@ const storyData =
                 o3 : "",
             },
                 walkAskKeepWalkingAsk : {
-                    text: `You approach the man with the shotgun cautiously. He sees you and points his gun at you. “What are you doin’ around these parts”, he asks in a low, husky tone. “There’s one on them terrible monsters in these woods”, the man says. “I’ve been looking for those forsaken werewolves all my life, and now is my time. The name’s sam, buy the say. Shotgun Sam. He takes you in and then drives you to Mc. Donald's in the morning`,
+                    text: `You approach the man with the shotgun cautiously. He sees you and points his gun at you. 
+                    
+                    “What are you doin’ around these parts”, he asks in a low, husky tone. “There’s one on them terrible monsters in these woods. I’ve been looking for those forsaken werewolves all my life, and now is my time. The name’s sam, buy the way. Shotgun Sam. 
+                    
+                    He takes you in and then drives you to Mc. Donald's in the morning`,
                     o1:"",
                     o2:"",
                     o3:""
                 },
                 walkAskKeepWalkingKeepWalking : {
-                    text: `“That man looks scary”, you say. “We better stay out of his way”. You go into the forest and the werewolf kills you.`,
+                    text: `“That man looks scary”, you say. “We better stay out of his way”. 
+                    
+                    You decide to walk in the forest to avoid anyone suspicious. As you walk, you start to hear strange noises, like someone is breathing on your neck. You turn around the hideous face of a wolf, foaming at the mouth. It's the last thing you ever see.`,
                     o1:"",
                     o2:"",
                     o3:""
@@ -138,11 +184,11 @@ const storyData =
     go : {
         text: () => `"Let's go to the house\", you say confidently. As you walk towards the house, it's clear that no one lives there. The house looks old and abandoned. "This is awesome!\", you say. \"Let's check it out!\". 
 
-     "Are you stupid!?\", replies ${friend2}. \"Who knows what could be in there? And this is definitley trespassing.\"
+     "Are you stupid!?\", replies ${friend2}. \"Who knows what could be in there? And this is definitely trespassing.\"
 
      "Come on, man. It's freakin' awesome!\". ${friend2} is pretty lame.
 
-     You approach the door, only to find it open. You walk into the decrepid building, finding the old remains of someone's past life. 
+     You approach the door, only to find it open. You walk into the decrepit building, finding the old remains of someone's past life. 
 That’s when you see the arm under the couch. You hear a faint chuckle. he he he. It becomes louder. hE hE hE. HE HE HE HE! Your
 heart starts pounding, and you start to wish you listened to ${friend2}.
 
@@ -178,26 +224,12 @@ heart starts pounding, and you start to wish you listened to ${friend2}.
             HE HE HE… You see the shadow of a man as you run through the forest. You make it down the to the road, but the man isn't far behind. 
             Then, you run into a man with a shotgun. \n
             "What in tarnation are you doing?", he says in a slow grumble. \n
-            He's after us!, you scream, trembling and exauseted. \n
+            He's after us!, you scream, trembling and exhausted. \n
             The man with the shotgun sees the shadow of the killer, and without hesitation, shoots him three times in the head.\n
             "The name's sam", he says, nonchalantly. "Shotgun sam". "You folks better be careful out in these parts, there are wild things out there."\n
             It's been a long night, but now you trust that you're safe.\n`,
             o1 : "",
             o2 : "",
             o3 : "",
-        },
-    p : {
-        text: "",
-        o1 : "",
-        o2 : "",
-        o3 : "",
-    },
+        }
 };
-
-
-// [2] : {
-//     text: ``,
-//     o1 : "",
-//     o2 : "",
-//     o3 : "",
-// },

@@ -1,9 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=New+Rocker&family=Pirata+One&family=Pixelify+Sans:wght@400..700&family=UnifrakturCook:wght@700&display=swap');
+:root{
+    --yellow-accent: #fcca03;
+}
+/* #fcba03 */
 body{
     margin-inline: 100px;
+    background-color: #111;
+    color: white;
+    font-family: "Pirata One", garamond, "Times New Roman", serif;
+    text-align: center;
+}
+.backgroundVideo{
+    position: fixed;
+    top:50%;
+    left:50%;
+    min-width: 100%;
+    min-height: 100%;
+    width:auto;
+    height: auto;
+    z-index: -2;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    pointer-events: none;
+}
+.overlay{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.243);
+    z-index: -1;
 }
 h1{
     text-align: center;
+    font-family: "Pirata One","New Rocker", "Grenze Gotisch", "UnifrakturCook", garamond, serif;
+    font-size: 70px;
 }
+#storyText{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 19px;
+    line-height: 1.6;
+    background-color: rgba(0, 0, 0, 0.451);
+    padding: 15px;
+    border-radius: 15px;
+    width: fit-content;
+    display: none;
+}
+button, input{
+    font-family: "Pirata One", Garamond, serif;
+}
+input, label{
+    font-size: 20px;
+}
+input:focus{
+    outline: none; 
+    border: 5px solid var(--yellow-accent);
+}
+input{
+    border-radius: 5px;
+    box-shadow: none;
+    border: 5px solid white;
+    padding: 5px;
+    box-sizing: border-box;
+}
+input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px white inset !important;
+    -webkit-text-fill-color: #000 !important;
+  }
+label{
+    margin-bottom: 5px;
+    text-align: left;
+
+}
+button{
+    font-size: 40px;
+    padding-inline: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    border: 0px solid rgb(165, 0, 0);
+    transition: background-color 0.5s;
+}
+button:focus, button:hover{
+    outline: none;
+    background-color: var(--yellow-accent);
+}
+
 .center{
     display: flex;
     justify-content: center;
@@ -11,15 +95,20 @@ h1{
 }
 #optionButtons {
     margin-top:30px;
+    margin-bottom:50px;
+    display: none;
 }
 #optionButtons button{
- margin-inline: 10px;
+    margin-inline: 10px;
 }
 #theEnd {
     text-align: center;
+    font-size: 50px;
+    display: none;
 }
 #friendInput{
-    display: grid;
+    /* display: grid; */
+    display: none;
 }
 #friendInput input{
     margin-bottom: 20px;
@@ -29,4 +118,7 @@ h1{
     margin-inline: auto;
     text-align: center;
 
+}
+#start{
+    font-size: 35px;
 }

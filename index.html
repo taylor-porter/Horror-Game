@@ -7,13 +7,20 @@
     <title>THE HORROR GAME</title>
 </head>
 <body>
+    <video autoplay muted loop class="backgroundVideo" style="z-index: -3;">
+        <source src="moon.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop class="backgroundVideo" style="opacity:0.4;">
+        <source src="vhs-static.mp4" type="video/mp4">
+    </video>
+ <div class="overlay"></div> 
     <h1>THE HORROR GAME</h1>
     <p id="storyText"></p>
     <h2 id="theEnd">THE END</h2>
     <div class="center">
         <button onclick="start()" id="start">Start</button>
     </div>
-    <form id="friendInput" class="center">
+    <form id="friendInput" class="center" autocomplete="off">
             <label for="friend1">Friend 1</label>
         <input type="text" id="friend1input" name="friend1"></input>
             <label for="friend2">Friend 2</label>

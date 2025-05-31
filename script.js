@@ -7,9 +7,15 @@ let option1 = document.getElementById("option1");
 let option2 = document.getElementById("option2");
 let option3 = document.getElementById("option3");
 
-let optionsDisplay = window.getComputedStyle(document.getElementById("optionButtons")).display;
-let endDisplay = window.getComputedStyle(document.getElementById("theEnd")).display;
-let friendInputDisplay = window.getComputedStyle(document.getElementById("friendInput")).display;
+// let optionsDisplay = window.getComputedStyle(document.getElementById("optionButtons")).display;
+// let endDisplay = window.getComputedStyle(document.getElementById("theEnd")).display;
+// let friendInputDisplay = window.getComputedStyle(document.getElementById("friendInput")).display;
+
+let optionsDisplay = "flex"
+let endDisplay = "initial"
+let friendInputDisplay = "grid"
+let storyDisplay = "flex"
+
 
 let storyContext = "";
 
@@ -20,11 +26,11 @@ const options = {
     2 : option2,
     3 : option3
 };
-window.onload = function () {
-    document.getElementById("optionButtons").style.display = "none";
-    document.getElementById("theEnd").style.display = "none";
-    document.getElementById("friendInput").style.display = "none";
-}
+// window.onload = function () {
+//     document.getElementById("optionButtons").style.display = "none";
+//     document.getElementById("theEnd").style.display = "none";
+//     document.getElementById("friendInput").style.display = "none";
+// }
 
 const friendInputs = [
     document.getElementById("friend1input"),
@@ -41,22 +47,27 @@ for(let i=0; i<friendInputs.length; i++){
     });
 }
 
-let selectedOption = -1;
-let optionsList = []
+let selectedOption = 0;
 window.addEventListener("keydown", function(event){
     if(event.key === "ArrowLeft" || event.key === "ArrowRight"){
-        
+        let optionsList = []
         for(let i=1; i<=3; i++){
             if(options[i].style.display !== "none"){
                 optionsList.push(options[i]);
             }
         }
-        if(event.key === "ArrowLeft"){
-            selectedOption = (selectedOption -1 + optionsList.length) % optionsList.length;
+        if(this.document.activeElement === option1 || this.document.activeElement === option2 || this.document.activeElement === option3){
+            if(event.key === "ArrowLeft"){
+                selectedOption = (selectedOption -1 + optionsList.length) % optionsList.length;
+            }
+            if(event.key === "ArrowRight"){
+                selectedOption = (selectedOption + 1) % optionsList.length
+            }
         }
-        if(event.key === "ArrowRight"){
-            selectedOption = (selectedOption + 1) % optionsList.length
+        else{
+            selectedOption = 0;
         }
+        
         
         optionsList[selectedOption].focus();
     }
@@ -78,6 +89,7 @@ function setText(text){
 }
 function start(){
     gameState = "friendInput"
+    storyText.style.display = storyDisplay
     storyText.innerText = "Please name 3 friends to bring along with you:";
     document.getElementById("friendInput").style.display = friendInputDisplay;
     friendInputs[0].focus();
@@ -93,23 +105,22 @@ function getFriendInput(){
 function playGame(){
     gameState = "story";
     storyContext = "";
-    storyText.innerText = `It's been a long week of studying and finals, and you finally finished your last class. You and your friends want to go out and celebrate! Your friend has a cabin in the woods, and she's throwing a huge party, so you drive with your friends up the winding mountain road, exited to catch a break.  Suddenly, your car starts to sputter and die. You are stranded on the side of the road in the middle of the night. You try to call for help, only to realize you have no cell service. Luckily, you stopped in front of a house. 
-      
-    "Thank goodness", ${friend1} says. "We can ask the owners for help." 
+    storyText.innerText = `It's been a long week of studying and finals, and you just finished your last class. You and your friends are ready celebrate! Your friend has a cabin in the woods, and she's throwing a huge party. You drive with your friends up the mountain road, exited to catch a break, when suddenly, your car starts to sputter and die. You are stranded on the side of the road in the middle of the night. You try to call for help, only to realize you have no cell service. Luckily, you stopped in front of a house. 
+
+    "Thank goodness", ${friend1} says. "We can ask those guys for help." 
         
     Your other friends aren't sure of that's the greatest idea. 
         
     "let's just stay here", ${friend2} suggests. 
         
-    ${friend3} suggests that you start walking to find a gas station or something.
+    ${friend3} thinks they should start walking to find a gas station or something.
     
-    Do you WAIT, WALK to find help, or GO to the house?`
+    Do you WAIT, WALK to find help, or GO to the house?`;
+
     document.getElementById("optionButtons").style.display = optionsDisplay;
     option1.innerText = "Wait";
     option2.innerText = "Walk";
     option3.innerText = "Go";
-    selectedOption = 0;
-    option1.focus();
     
 }
 function chooseOption(number){
@@ -126,10 +137,9 @@ function chooseOption(number){
     else{
         storyText.innerText = storyData[storyContext].text;
     }
-    let currentOptions = [option1, option2, option3]
+    let currentOptions = [option1, option2, option3];
+    //document.activeElement.blur();
     let undefinedOptions = 0;
-    selectedOption = 0;
-    option1.focus();
 
     for(let i=0; i<currentOptions.length; i++){
         let optionTag = "o" + (i+1);
