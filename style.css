@@ -52,6 +52,7 @@ h1{
 button, input{
     font-family: "Pirata One", Garamond, serif;
     background-color: white;
+    color: black;
 }
 input, label{
     font-size: 20px;
