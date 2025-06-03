@@ -60,7 +60,7 @@ h1{
     text-align: center;
     font-family: "Pirata One","New Rocker", "Grenze Gotisch", "UnifrakturCook", garamond, serif;
     font-size: 70px;
-    text-shadow: 10px 10px 60px black;
+    text-shadow: 4px 4px black;
 }
 #storyText{
     font-family: "EB Garamond", Georgia, 'Times New Roman', Times, serif;
