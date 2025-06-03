@@ -11,6 +11,7 @@ body{
     text-align: center;
 }
 #backgroundImg{
+    display: none;
     z-index: -4;
     position: fixed;
     top: 50%;
@@ -22,7 +23,6 @@ body{
     filter: contrast(1.2);
 }
 .backgroundVideo{
-    display: none;
     position: fixed;
     top:50%;
     left:50%;
