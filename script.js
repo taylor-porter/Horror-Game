@@ -32,6 +32,15 @@ const options = {
 //     document.getElementById("friendInput").style.display = "none";
 // }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById('backgroundVideo');
+    const fallback = document.getElementById("backgroundImg");
+    video.play().catch(() => {
+        video.style.display = "none";
+        fallback.style.display = "block"
+    })
+})
+
 const friendInputs = [
     document.getElementById("friend1input"),
     document.getElementById("friend2input"),
