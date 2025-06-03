@@ -12,17 +12,20 @@ body{
 }
 #backgroundImg{
     display: none;
-    z-index: -4;
+
     position: fixed;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    background-image: url("background.png");
+    z-index: -3;
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    background-size: cover;
     filter: contrast(1.2);
+
 }
 .backgroundVideo{
+    
     position: fixed;
     top:50%;
     left:50%;
@@ -47,13 +50,14 @@ body{
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.139);
     z-index: -1;
 }
 h1{
     text-align: center;
     font-family: "Pirata One","New Rocker", "Grenze Gotisch", "UnifrakturCook", garamond, serif;
     font-size: 70px;
+    text-shadow: 10px 10px 70px black;
 }
 #storyText{
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -74,7 +78,7 @@ input, label{
     font-size: 20px;
 }
 input:focus{
-    outline: none; 
+    outline: none;
     border: 5px solid var(--yellow-accent);
 }
 input{
