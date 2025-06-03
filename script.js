@@ -147,6 +147,11 @@ function chooseOption(number){
         storyText.innerText = storyData[storyContext].text;
     }
     let currentOptions = [option1, option2, option3];
+    window.scrollTo({
+        top:0,
+        left:0,
+        behavior:"smooth"
+    });
     //document.activeElement.blur();
     let undefinedOptions = 0;
 
