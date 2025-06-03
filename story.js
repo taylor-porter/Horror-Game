@@ -188,9 +188,7 @@ const storyData =
 
      "Come on, man. It's freakin' awesome!\". ${friend2} is pretty lame.
 
-     You approach the door, only to find it open. You walk into the decrepit building, finding the old remains of someone's past life. 
-That’s when you see the arm under the couch. You hear a faint chuckle. he he he. It becomes louder. hE hE hE. HE HE HE HE! Your
-heart starts pounding, and you start to wish you listened to ${friend2}.
+     You approach the door, only to find it open. You walk into the decrepit building, finding the old remains of someone's past life. That’s when you see the arm under the couch. You hear a faint chuckle. he he he. It becomes louder. hE hE hE. HE HE HE HE! Your heart starts pounding, and you start to wish you listened to ${friend2}.
 
 "On the ground, you see a crowbar. Do you take the crowbar and HIDE, or do you RUN?` ,
         o1 : "Hide",
@@ -220,14 +218,17 @@ heart starts pounding, and you start to wish you listened to ${friend2}.
 
         goRun : {
             text: `“Run”, you scream.\n
-            As you hear the footsteps coming closer, you and your friends bolt towards the door. The footsteps are pounding now. They pound faster and faster as the blood-curdling laugh pierces your ears. 
-            HE HE HE… You see the shadow of a man as you run through the forest. You make it down the to the road, but the man isn't far behind. 
-            Then, you run into a man with a shotgun. \n
-            "What in tarnation are you doing?", he says in a slow grumble. \n
-            He's after us!, you scream, trembling and exhausted. \n
-            The man with the shotgun sees the shadow of the killer, and without hesitation, shoots him three times in the head.\n
-            "The name's sam", he says, nonchalantly. "Shotgun sam". "You folks better be careful out in these parts, there are wild things out there."\n
-            It's been a long night, but now you trust that you're safe.\n`,
+            As you hear the footsteps coming closer, you and your friends bolt towards the door. The footsteps are pounding now. They pound faster and faster as the blood-curdling laugh pierces your ears. HE HE HE… You see the shadow of a man as you run through the forest. You make it down the to the road, but the man isn't far behind. Then, you run into a man with a shotgun.
+            
+            "What in tarnation are you doing?", he says in a slow grumble.
+
+            He's after us!, you scream, trembling and exhausted.
+
+            The man with the shotgun sees the shadow of the killer, and without hesitation, shoots him three times in the head.
+
+            "The name's sam", he says, nonchalantly. "Shotgun sam". "You folks better be careful out in these parts, there are wild things out there."
+
+            It's been a long night, but now you trust that you're safe.`,
             o1 : "",
             o2 : "",
             o3 : "",
